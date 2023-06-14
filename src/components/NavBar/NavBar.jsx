@@ -8,12 +8,20 @@ import {BiNews} from 'react-icons/bi'
 import {BiMessageSquareDetail} from 'react-icons/bi'
 import {BiMap} from 'react-icons/bi'
 import {AiOutlineShoppingCart} from 'react-icons/ai'
+import { RiMenuLine } from 'react-icons/ri';
 // import Galary from './../Galary/Galary';
 
 
 const NavBar = () => {
+    const [isActive,setIsActive]=useState(false);
+
+    const toggleMenu=()=>{
+        setIsActive(!isActive);
+    }
     return (
-            <nav className="nav__items">
+        <div>
+            <RiMenuLine onClick={toggleMenu} className={`menu-button ${isActive?"active":""}`} />
+            <nav onClick={toggleMenu} className={`nav__items ${isActive?"active":""}`}>
                 <NavLink to="/home" className="nav-item nav-link">
                     <AiOutlineHome />Home
                 </NavLink>
@@ -45,6 +53,7 @@ const NavBar = () => {
                 <a href="#" className="nav__item disabled-link"><AiOutlineShoppingCart />Shopping</a> */}
                 <div className="menu-icon"></div>
             </nav>
+        </div>
     )
 }
 
