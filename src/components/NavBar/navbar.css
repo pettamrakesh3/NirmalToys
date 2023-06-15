@@ -1,12 +1,14 @@
-nav {
+.navbar {
     background: var(--color-primary);
+    position: sticky; 
+    top: 5.8rem;
+    z-index: 1;   
+}
+nav{
     display: flex;
     justify-content: center;
     padding: 1rem 0 1rem 0;
-    gap: 3rem;
-    position: sticky;
-    top: 5.8rem;
-    z-index: 1;
+    gap: 3rem;  
 }
 
 nav a {
@@ -42,6 +44,7 @@ nav a.active {
     
     display: none;
 }
+
 /* ============= MEDIA QUERIES (for 1024px) ============= */
 @media screen and (max-width: 1024px) {
     nav  {
